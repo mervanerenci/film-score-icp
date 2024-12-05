@@ -3,6 +3,7 @@ import Option "mo:base/Option";
 import Map "mo:base/OrderedMap";
 import Nat32 "mo:base/Nat32";
 
+
 actor FilmScoring {
 
   /**
@@ -35,15 +36,17 @@ actor FilmScoring {
    */
 
   // Create a film.
-  public func create(film : Film) : async FilmId {
+  public func createFilm(film : Film) : async FilmId {
     let filmId = next;
     next += 1;
     map := Ops.put(map, filmId, film);
     return filmId
   };
 
+  
+
   // Read a film.
-  public query func read(filmId : FilmId) : async ?Film {
+  public query func getFilm(filmId : FilmId) : async ?Film {
     let result = Ops.get(map, filmId);
     return result
   };
