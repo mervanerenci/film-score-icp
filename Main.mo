@@ -1,4 +1,3 @@
-import List "mo:base/List";
 import Option "mo:base/Option";
 import Map "mo:base/OrderedMap";
 import Nat32 "mo:base/Nat32";
